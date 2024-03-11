@@ -36,7 +36,7 @@ app.listen(app.get('port'), function () {
 
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
-    response.render('index', {pastas: pastaData.data, pizzas: pizzaData.data});
+    response.render('homepage', {pastas: pastaData.data, pizzas: pizzaData.data});
 })
 
 app.get('/contact', function (request, response) {
