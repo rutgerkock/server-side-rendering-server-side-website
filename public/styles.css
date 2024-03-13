@@ -289,7 +289,7 @@ footer ul li a {
     grid-template-rows: min-content 2fr;
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
-    margin: 2rem 0 2rem 10rem;
+    margin: 2rem 0 2rem 2vw;
 }
         
 .detail img { grid-area: 1 / 1 / 2 / 2; }
