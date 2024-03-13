@@ -4,9 +4,9 @@ import express from 'express'
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
-// Haal alle squads uit de WHOIS API op
-const pizzaData = await fetchJson('https://fdnd-agency.directus.app/items/demo_pizzas')
-const pastaData = await fetchJson('https://fdnd-agency.directus.app/items/demo_pastas')
+// Stel het basis endpoint in
+const apiUrl = "https://fdnd-agency.directus.app/items/"
+const apiItem = (apiUrl + 'oba_item')
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -32,51 +32,20 @@ app.listen(app.get('port'), function () {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
-// Routes
-
-// Maak een GET route voor de index
 app.get('/', function (request, response) {
-    response.render('homepage', {pastas: pastaData.data, pizzas: pizzaData.data});
+    fetchJson(apiItem).then((items) => {
+        response.render('homepage',{
+            items: items.data,
+            data: items.data,
+        })
+    })
 })
 
-app.get('/contact', function (request, response) {
-    response.render('contact');
-})
 
-app.get('/pizzas', function (request, response) {
-    response.render('pizzas', {pizzas: pizzaData.data});
-})
-
-app.get('/pizzas/:id', function (request, response) {
-    fetchJson('https://fdnd-agency.directus.app/items/demo_pizzas?filter={"id":'+ request.params.id +'}').then((pizzaDetail) => {
-        response.render('pizza', {
-            pizza: pizzaDetail.data[0], 
-            pizzas: pizzaData.data
+app.get('/detail/:id', function(request, response){
+    fetchJson(apiItem + '?filter={"id":' + request.params.id + '}').then((items) => {
+        response.render('detail', {
+            items: items.data
         });
-    });
-})
-
-app.get('/pastas', function (request, response) {
-    response.render('pastas', {pastas: pastaData.data});
-})
-
-app.get('/pastas/:id', function (request, response) {
-    fetchJson('https://fdnd-agency.directus.app/items/demo_pastas?filter={"id":'+ request.params.id +'}').then((pastasDataUitDeAPI) => {
-        response.render('pasta', {pasta: pastasDataUitDeAPI.data[0], pastas: pastaData.data});
-    });
-})
-
-// Maak een POST route voor de index
-app.post('/', function (request, response) {
-  // Er is nog geen afhandeling van POST, redirect naar GET op /
-  response.redirect(303, '/')
-})
-
-// Maak een GET route voor een detailpagina met een request parameter id
-app.get('/detail/:id', function (request, response) {
-  // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
-  fetchJson('https://fdnd.directus.app/items/person/' + request.params.id).then((apiData) => {
-    // Render detail.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('detail', {person: apiData.data, squads: squadData.data})
-  })
+    })
 })

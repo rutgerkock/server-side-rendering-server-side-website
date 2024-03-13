@@ -1,6 +1,67 @@
-<%- include('partials/navigatie', {current: '/'}); %>
+<%- include('partials/navigatie')%>
 
-<h1>PizzaRia</h1>
+<section class="main">
+    <article>
+        <div>
+            <h1>Welkom <span>Mark Vos</span> bij OBA!</h1>
+            <p>
+                Ontdek een wereld vol kennis en verhalen. Hier vind je al jouw 
+                gegevens zoals leningen en betalingen.
+                Ook kan je hier nieuwe activiteiten ontdekken.
+            </p>
+        </div>
+        <img src="https://mijn-oba-rc.netlify.app/oba-logo-blauw.webp">
+    </article>
+</section>
+
+<section class="main_sections">
+    <article>
+        <div>
+            <h2>Jouw recent bekeken leeslijst: <span>boeken</span></h2>
+            <p>Deze boeken heb je toegevoegd aan jouw leeslijst en wil je ooit nog lezen!</p>
+            <a href="#">Bekijk Leeslijst</a>
+        </div>
+        <%- include('./partials/section.ejs', { data: data, item: 'book', listClass: 'boeken_lijst', scrollAmount: 200 }) %>
+    </article>
+</section>
 
 
-<p><strong>Goede pizza's, slechte woordgrappen</strong></p>
+<section class="main_sections">
+    <article>
+        <%- include('./partials/section.ejs', { data: data, item: 'cd', listClass: 'cd_lijst', scrollAmount: 200 }) %>
+        <div>
+            <h2>Jouw recent beluisterde: <span>CD's</span></h2>
+            <p>Deze CD's heb je toegevoegd aan jouw luisterlijst en wil je ooit nog luisteren!</p>
+            <a href="#">Bekijk Luisterlijst</a>
+        </div>
+    </article>
+</section>
+
+
+<section class="main_sections">
+    <article>
+        <div>
+            <h2>Jouw recent bekeken: <span>activiteiten</span></h2>
+            <p>Deze activiteiten heb je toegevoegd aan jouw activiteitenlijst en wil je nog aan meedoen!</p>
+            <a href="#">Bekijk activiteitenlijst</a>
+        </div>
+        <%- include('./partials/section.ejs', { data: data, item: 'activity', listClass: 'activiteiten_lijst', scrollAmount: 200 }) %>
+    </article>
+</section>
+
+
+<section class="main_sections">
+    <article>
+        <div>
+            <h2>Ontdek de Wereld van Leren bij <span>OBA!</span></h2>
+            <p>
+                Bij OBA bieden we niet alleen een schat aan boeken, maar ook een wereld van 
+                kennis en leren. Ontdek onze cursussen, van talen en schoolvakken tot rijles 
+                theorie en meer. Investeer in jezelf, breid je vaardigheden 
+                uit en verrijk je leven met onze educatieve programma's. Kom langs en begin vandaag nog met leren!
+            </p>
+            <a href="#">Meer bekijken</a>
+        </div>
+        <%- include('./partials/section.ejs', { data: data, item: 'activity', listClass: 'cursus_lijst', scrollAmount: 200 }) %>
+    </article>
+</section>

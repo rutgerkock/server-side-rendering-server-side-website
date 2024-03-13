@@ -1,0 +1,66 @@
+<%- include('./partials/navigatie') %>
+
+<main class="detail">
+  <article>
+    <% items.forEach(item => { %>
+    <img src="https://fdnd-agency.directus.app/assets/<%= item.afbeelding %>" alt=""/>
+
+    <div class="items">
+      <h2><%= item.title %></h2>
+      <% if(item.type) { %>
+        <p><b>type: </b><%= item.type %></p>
+      <% } %>
+      <% if(item.oba_link) { %>
+        <p><b>oba link: </b><%= item.oba_link %></p>
+      <% } %>
+      <% if(item.publisher) { %>
+        <p><b>uitgever: </b><%= item.publisher %></p>
+      <% } %>
+      <% if(item.language) { %>
+        <p><b>taal: </b><%= item.language %></p>
+      <% } %>
+      <% if(item.characteristics) { %>
+        <p><b>kenmerken: </b><%= item.characteristics %></p>
+      <% } %>
+      <% if(item.subject) { %>
+        <p><b>onderwerp: </b><%= item.subject %></p>
+      <% } %>
+      <% if(item.ISBN) { %>
+        <p><b>ISBN: </b><%= item.ISBN %></p>
+      <% } %>
+      <% if(item.pica_number) { %>
+        <p><b>pica nummer: </b><%= item.pica_number %></p>
+      <% } %>
+      <% if(item.SISO) { %>
+        <p><b>SISO: </b><%= item.SISO %></p>
+      <% } %>
+      <% if(item.editie) { %>
+        <p><b>editie: </b><%= item.editie %></p>
+      <% } %>
+      <% if(item.auteur) { %>
+        <p><b>auteur: </b><%= item.auteur %></p>
+      <% } %>
+      <% if(item.vertaler) { %>
+        <p><b>vertaler: </b><%= item.vertaler %></p>
+      <% } %>
+      <% if(item.genre) { %>
+        <p><b>genre: </b><%= item.genre %></p>
+      <% } %>
+      <% if(item.datetime) { %>
+        <p><b>datum: </b><%= item.datetime %></p>
+      <% } %>
+      <% if(item.price) { %>
+        <p><b>prijs: €</b><%= item.price %></p>
+      <% } %>
+      <% if(item.location) { %>
+        <p><b>locatie: </b><%= item.location %></p>
+      <% } %>
+    </div>
+    
+    <div class="summary">
+        <h3>Sammenvatting:</h3>
+        <p><%- item.description %></p>
+    </div>
+    <% }) %>
+  </article>
+</main>
