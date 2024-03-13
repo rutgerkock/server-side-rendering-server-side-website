@@ -200,7 +200,7 @@ section.main article img {
     max-width: 50vw;
 }
 
-.main_sections article div a{
+.main_sections article div a, #back{
     border-radius: 0.25rem;
     align-items: center;
     text-align: center;
@@ -209,6 +209,12 @@ section.main article img {
     padding: 1em 2em;
     text-decoration: none;
     max-width: 12rem;
+}
+
+#back {
+    position: relative;
+    top: 2rem;
+    left: 2rem;
 }
 
 .main_sections article ul {
@@ -283,7 +289,7 @@ footer ul li a {
     grid-template-rows: min-content 2fr;
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
-    margin: 2rem 0 2rem 2vw;
+    margin: 4rem 0 2rem 2vw;
 }
         
 .detail img { grid-area: 1 / 1 / 2 / 2; }

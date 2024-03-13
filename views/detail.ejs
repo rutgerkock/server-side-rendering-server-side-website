@@ -1,6 +1,17 @@
-<%- include('./partials/navigatie') %>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "../styles.css">
+    <script src="../script.js" defer></script>
+    
+    <title>Mijn OBA</title> 
+</head>
+<body>
 
 <main class="detail">
+  <a href="/" id="back">Terug</a>
   <article>
     <% items.forEach(item => { %>
     <img src="https://fdnd-agency.directus.app/assets/<%= item.afbeelding %>" alt=""/>
