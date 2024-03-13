@@ -13,7 +13,7 @@
 
 <ul class="<%= listClass %>">
     <% data.filter(dataItem => dataItem.item_type === item).forEach(filteredItem => { %>
-        <li onclick="redirectToDetail('<%= filteredItem.id %>')">
+        <li onclick="window.location.href='./detail/<%= filteredItem.id %>'">
             <img src="https://fdnd-agency.directus.app/assets/<%= filteredItem.afbeelding %>" alt="<%= filteredItem.title %> Image">
             <div>
                 <h3><%= filteredItem.title.length > 22 ? filteredItem.title.slice(0, 22) + '...' : filteredItem.title %></h3>
