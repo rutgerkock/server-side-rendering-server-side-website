@@ -63,8 +63,8 @@ header button {
     border: none;
     background-color: var(--primary-accent-color);
     color: var(--primary-light-color);
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     font-size: 30px;
     border-radius: 0 0 1rem 1rem;
     cursor: pointer;
@@ -75,12 +75,12 @@ header form {
     margin-left: 4vw;
     background-color: var(--primary-accent-color);
     color: var(--primary-light-color);
-    height: 6rem;
-    width: 16rem;
+    height: 4rem;
+    width: 12rem;
     font-size: 30px;
     border-radius: 0 0 1rem 1rem;
-    padding-top: 1.5rem;
-    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
 }
 
 header form input[type="text"] {
@@ -88,9 +88,9 @@ header form input[type="text"] {
     background-color: var(--primary-light-color);
     color: var(--primary-dark-color);
     font-size: 20px;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     width: 60%;
-    height: 3rem;
+    height: 2rem;
     padding: 1rem;
 }
 
@@ -134,7 +134,7 @@ section.main article img {
     right: 0;
     display: flex;
     flex-direction: row;
-    top: 5rem;
+    top: 5vh;
     min-width: 8rem;
 }
 
@@ -167,13 +167,14 @@ section.main article img {
     background-color: var(--primary-background-color);
 }
 
-.main_sections:nth-of-type(odd) .buttons {
+.main_sections:nth-of-type(even) .buttons {
     left: 0;
     right: auto;
 }
 
 .main_sections:last-of-type article {
     grid-template-columns: 1fr;
+    height: 90vh;
 
 }
 
@@ -249,6 +250,37 @@ section.main article img {
     font-size: 14px;
 }
 
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: var(--primary-dark-color);
+    color: var(--primary-light-color);
+    height: 30vh;
+    justify-content: space-evenly;
+}
+
+footer img {
+    width: auto;
+    height: 10rem;
+    object-fit: cover;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin: 1rem;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: var(--primary-light-color);
+}
 
 .detail article {
     position: relative;
@@ -276,15 +308,4 @@ section.main article img {
     display: flex;
     flex-direction: column;
     width: 30rem;
-}
-
-
-@keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-200px); }
-}
-
-@keyframes scrollRight {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(200px); }
 }
