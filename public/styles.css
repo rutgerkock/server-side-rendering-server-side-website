@@ -131,7 +131,7 @@ section.main article img {
 
 .main_sections .buttons {
     position: absolute;
-    right: 0;
+    left: 0;
     display: flex;
     flex-direction: row;
     top: 5vh;
@@ -159,22 +159,16 @@ section.main article img {
     gap: 2rem;
 }
 
-.main_sections:nth-of-type(odd) article {
-    grid-template-columns: 2fr 1fr;
-}
 
 .main_sections:nth-of-type(odd) {
     background-color: var(--primary-background-color);
 }
 
-.main_sections:nth-of-type(even) .buttons {
-    left: 0;
-    right: auto;
-}
 
 .main_sections:last-of-type article {
     grid-template-columns: 1fr;
     height: 90vh;
+    padding-top: 2rem;
 
 }
 

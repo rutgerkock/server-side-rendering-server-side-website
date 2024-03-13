@@ -1,5 +1,5 @@
 function scrollList(direction, listSelector, scrollAmount) {
-    const list = document.querySelector(listSelector);
+    const list = document.querySelector('.' + listSelector);
     if (!list) return; 
 
     if (direction === 'left') {

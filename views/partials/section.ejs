@@ -1,17 +1,24 @@
+<div>
+    <h2><%= title %> <span> <%= title_span %> </span></h2>
+    <p>
+        <%= description %>
+    </p>
+    <a href="#"><%= linkText %></a>
+</div>
+
 <div class="buttons">
-    <button onclick="scrollList('left', '.<%= listClass %>', 200 )">⬅️</button>
-    <button onclick="scrollList('right', '.<%= listClass %>', 200 )">➡️</button>
+    <button onclick="scrollList('left', '<%= listClass %>', 200)">⬅️</button>
+    <button onclick="scrollList('right', '<%= listClass %>', 200)">➡️</button>
 </div>
 
 <ul class="<%= listClass %>">
     <% data.filter(dataItem => dataItem.item_type === item).forEach(filteredItem => { %>
-        <li onclick="window.location.href='./detail/<%= filteredItem.id %>'">
+        <li onclick="redirectToDetail('<%= filteredItem.id %>')">
             <img src="https://fdnd-agency.directus.app/assets/<%= filteredItem.afbeelding %>" alt="<%= filteredItem.title %> Image">
             <div>
                 <h3><%= filteredItem.title.length > 22 ? filteredItem.title.slice(0, 22) + '...' : filteredItem.title %></h3>
                 <p><%= filteredItem.auteur %></p>
             </div>
         </li>
-        <
     <% }); %>
 </ul>
