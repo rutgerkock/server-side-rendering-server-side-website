@@ -88,6 +88,7 @@ header details ul {
     background-color: var(--primary-accent-color);
     border-radius: 1rem;
     width: 21vw;
+    min-width: 12rem;
     margin-top: 0.5rem;
 }
 
