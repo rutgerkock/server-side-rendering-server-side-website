@@ -52,13 +52,14 @@ header {
 }
 
 header {
-    height: 10vh;
     width: 100%;
     display: flex;
     flex-direction: row;
+    z-index: 999;
+    position: fixed;
 }
 
-header button {
+header details {
     margin-left: 8vw;
     border: none;
     background-color: var(--primary-accent-color);
@@ -68,6 +69,37 @@ header button {
     font-size: 30px;
     border-radius: 0 0 1rem 1rem;
     cursor: pointer;
+}
+
+header details summary {
+    list-style: none;
+    padding: 1rem;
+    transition: rotate 0.3s ease;
+}
+
+details[open] summary {
+    rotate: 180deg;
+}
+
+header details ul {
+    list-style: none;
+    padding: 1rem;
+    position: absolute;
+    background-color: var(--primary-accent-color);
+    border-radius: 1rem;
+    width: 21vw;
+    margin-top: 0.5rem;
+}
+
+header details ul li {
+    list-style: none;
+    padding: 0.5rem;
+}
+
+header details ul a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--primary-light-color);
 }
 
 header form {
@@ -113,7 +145,7 @@ section.main article {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     margin: 0 8vw;
     gap: 8vw;
 }
